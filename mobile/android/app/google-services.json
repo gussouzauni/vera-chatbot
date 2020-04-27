@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "568098046466",
+    "firebase_url": "https://challengevtex.firebaseio.com",
+    "project_id": "challengevtex",
+    "storage_bucket": "challengevtex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568098046466:android:1e01212f85259911099d1b",
+        "android_client_info": {
+          "package_name": "com.example.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568098046466-av3nup4r4ljanbd81tquqf5ljbfl4mig.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobile",
+            "certificate_hash": "a014667529f014d6a2849b4d15ecdc202a5d7f02"
+          }
+        },
+        {
+          "client_id": "568098046466-1o9nongj4vjhdgqq3qpn7e3varh4u6f6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4D6-Sx3jXJMq4Kj6LM505IWx1feWZ0Es"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568098046466-1o9nongj4vjhdgqq3qpn7e3varh4u6f6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

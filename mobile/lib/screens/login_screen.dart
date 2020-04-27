@@ -7,6 +7,11 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Challenge VTex"),
       ),
+      body: Container(
+        width: double.maxFinite,
+        height: 200,
+        color: Colors.amber,
+      ),
     );
   }
 }
