@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/screens/login_screen.dart';
 
-class MainDart extends StatefulWidget {
-  @override
-  _MainDartState createState() => _MainDartState();
+void main() {
+  runApp(MainApp());
 }
 
-class _MainDartState extends State<MainDart> {
+class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Challenge VTex'),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginScreen(),
     );
   }
 }
