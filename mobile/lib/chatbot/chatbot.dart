@@ -62,7 +62,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
           CardDialogflow(
             response.getListMessage()[0],
           ).title,
-      name: "Bot",
+      name: "Vera",
       type: false,
     );
     setState(() {
