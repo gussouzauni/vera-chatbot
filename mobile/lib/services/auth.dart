@@ -35,10 +35,10 @@ class Auth {
 
   void newUser(bool isNewUser) {}
   Future<void> updateUserData(FirebaseUser user) {
-    DocumentReference reportRef =
+    DocumentReference userRef =
         _firestore.collection('user').document(user.uid);
 
-    return reportRef.setData({
+    return userRef.setData({
       'email': user.email,
       'name': user.displayName,
       'photo': user.photoUrl,

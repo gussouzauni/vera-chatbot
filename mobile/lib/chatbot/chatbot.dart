@@ -1,7 +1,11 @@
+import 'dart:async';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:mobile/model/message.dart';
+import 'package:provider/provider.dart';
 
 class Chatbot extends StatefulWidget {
   Chatbot({
@@ -16,11 +20,27 @@ class Chatbot extends StatefulWidget {
 }
 
 class HomeScreenDialogFlow extends State<Chatbot> {
-  //FirebaseUser user = Provider.of<FirebaseUser>(context);
+  final Firestore _firestore = Firestore.instance;
   final List<Message> _messages = <Message>[];
   final TextEditingController _textController = TextEditingController();
+  StreamController<String> streamController = new StreamController();
+
+  @override
+  void initState() {
+    super.initState();
+    streamController.stream.listen((text) {
+      print('Ouvinte: ' + text);
+    });
+  }
+
+  @override
+  void dispose() {
+    streamController.close();
+    super.dispose();
+  }
 
   Widget _buildTextComposer() {
+    FirebaseUser user = Provider.of<FirebaseUser>(context);
     return IconTheme(
       data: IconThemeData(color: Theme.of(context).accentColor),
       child: Container(
@@ -28,9 +48,9 @@ class HomeScreenDialogFlow extends State<Chatbot> {
         child: Row(
           children: <Widget>[
             Flexible(
-              child: TextField(
+              child: TextFormField(
                 controller: _textController,
-                onSubmitted: _handleSubmitted,
+                onFieldSubmitted: _handleSubmitted,
                 decoration:
                     InputDecoration.collapsed(hintText: "Enviar uma mensagem"),
               ),
@@ -39,7 +59,8 @@ class HomeScreenDialogFlow extends State<Chatbot> {
               margin: EdgeInsets.symmetric(horizontal: 4.0),
               child: IconButton(
                 icon: Icon(Icons.send),
-                onPressed: () => _handleSubmitted(_textController.text),
+                onPressed: () => _handleSubmitted(
+                    _textController.text, user.displayName, user.photoUrl),
               ),
             ),
           ],
@@ -72,17 +93,25 @@ class HomeScreenDialogFlow extends State<Chatbot> {
     });
   }
 
-  void _handleSubmitted(String text) {
+  void _handleSubmitted(String text, [String name, String photo]) {
     _textController.clear();
     Message message = Message(
       text: text,
-      name: "Gustavo Souza",
+      name: name,
+      photo: photo,
       type: true,
     );
     setState(() {
-      _messages.insert(0, message);
+      if (!text.isEmpty) {
+        _messages.insert(0, message);
+        print(text);
+      }
     });
     response(text);
+
+    if (text == 'cadastro') {
+      streamController.add(text);
+    }
   }
 
   @override

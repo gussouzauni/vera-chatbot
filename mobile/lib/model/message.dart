@@ -4,11 +4,13 @@ class Message extends StatelessWidget {
   Message({
     this.text,
     this.name,
+    this.photo,
     this.type,
   });
 
   final String text;
   final String name;
+  final String photo;
   final bool type;
 
   List<Widget> otherMessage(context) {
@@ -52,9 +54,15 @@ class Message extends StatelessWidget {
         ),
       ),
       Container(
-        margin: const EdgeInsets.only(left: 16.0),
-        child: CircleAvatar(child: Icon(Icons.person)),
-      ),
+          width: 40,
+          height: 40,
+          margin: const EdgeInsets.only(left: 16.0),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                fit: BoxFit.fitHeight,
+                image: NetworkImage(this.photo),
+              ))),
     ];
   }
 
