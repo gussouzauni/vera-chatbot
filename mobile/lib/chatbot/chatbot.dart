@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:mobile/model/message.dart';
@@ -15,6 +16,7 @@ class Chatbot extends StatefulWidget {
 }
 
 class HomeScreenDialogFlow extends State<Chatbot> {
+  //FirebaseUser user = Provider.of<FirebaseUser>(context);
   final List<Message> _messages = <Message>[];
   final TextEditingController _textController = TextEditingController();
 
@@ -86,11 +88,6 @@ class HomeScreenDialogFlow extends State<Chatbot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("ChatBot - VTex"),
-        backgroundColor: Colors.amber,
-      ),
       body: Column(children: <Widget>[
         Flexible(
             child: ListView.builder(

@@ -33,6 +33,7 @@ class Auth {
     }
   }
 
+  void newUser(bool isNewUser) {}
   Future<void> updateUserData(FirebaseUser user) {
     DocumentReference reportRef =
         _firestore.collection('user').document(user.uid);

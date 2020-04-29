@@ -1,4 +1,3 @@
-import 'package:mobile/chatbot/chatbot.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/login_screen.dart';
 
