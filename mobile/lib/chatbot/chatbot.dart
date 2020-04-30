@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +101,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
       type: true,
     );
     setState(() {
-      if (!text.isEmpty) {
+      if (text.isNotEmpty) {
         _messages.insert(0, message);
         print(text);
       }

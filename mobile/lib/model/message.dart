@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Message extends StatelessWidget {
   Message({
@@ -16,11 +17,12 @@ class Message extends StatelessWidget {
   List<Widget> otherMessage(context) {
     return <Widget>[
       Container(
-        margin: const EdgeInsets.only(right: 16.0),
-        child: CircleAvatar(
-          child: Image.asset("assets/bot.png"),
-        ),
-      ),
+          margin: const EdgeInsets.only(right: 16.0),
+          child: CircleAvatar(
+            child: Image.asset(
+              'assets/vera-bot.png',
+            ),
+          )),
       Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
