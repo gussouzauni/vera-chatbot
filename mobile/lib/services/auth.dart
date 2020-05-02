@@ -43,7 +43,19 @@ class Auth {
       'name': user.displayName,
       'photo': user.photoUrl,
       'uid': user.uid,
+      'cpf': '',
+      'cnpj': '',
       'lastActivity': DateTime.now(),
+    }, merge: true);
+  }
+
+  Future<void> getMessageUser(FirebaseUser user) {
+    DocumentReference userRef =
+        _firestore.collection('user').document(user.uid);
+
+    return userRef.setData({
+      'cpf': '000',
+      'cnpj': '000',
     }, merge: true);
   }
 

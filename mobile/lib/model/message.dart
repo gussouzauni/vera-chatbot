@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Message extends StatelessWidget {
   Message({
@@ -32,6 +31,7 @@ class Message extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             Container(
+              //custom message here
               margin: const EdgeInsets.only(top: 5.0),
               child: Text(text),
             ),
