@@ -1,5 +1,5 @@
-import 'package:mobile/model/user.dart';
-import 'package:mobile/services/database.dart';
+import 'package:Vera/model/user.dart';
+import 'package:Vera/services/database.dart';
 
 class Global {
   static final String title = 'Vera - ChatBot';

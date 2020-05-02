@@ -1,9 +1,8 @@
-import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
-import 'package:mobile/model/message.dart';
-import 'package:mobile/services/auth.dart';
+import 'package:Vera/model/message.dart';
+import 'package:Vera/services/auth.dart';
 import 'package:provider/provider.dart';
 
 class Chatbot extends StatefulWidget {
@@ -21,7 +20,6 @@ class Chatbot extends StatefulWidget {
 class HomeScreenDialogFlow extends State<Chatbot> {
   final List<Message> _messages = <Message>[];
   final TextEditingController _textController = TextEditingController();
-
   Auth auth = new Auth();
 
   @override
@@ -47,7 +45,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
               child: TextFormField(
                 onChanged: (v) {
                   if (v == 'cadastro' || v == 'cadastrar') {
-                    print(v);
+                    // print(v);
                   }
                 },
                 controller: _textController,
@@ -59,6 +57,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 4.0),
               child: IconButton(
+                color: const Color(0xffF71963),
                 icon: Icon(Icons.send),
                 onPressed: () => _handleSubmitted(_textController.text,
                     user.displayName, user.photoUrl, user),
@@ -68,10 +67,6 @@ class HomeScreenDialogFlow extends State<Chatbot> {
         ),
       ),
     );
-  }
-
-  Future<String> Completely() {
-    Completer c = new Completer();
   }
 
   void response(query) async {
@@ -84,7 +79,9 @@ class HomeScreenDialogFlow extends State<Chatbot> {
       authGoogle: authGoogle,
       language: Language.english,
     );
+
     AIResponse response = await dialogflow.detectIntent(query);
+
     Message message = Message(
       text: response.getMessage() ??
           CardDialogflow(
@@ -110,10 +107,26 @@ class HomeScreenDialogFlow extends State<Chatbot> {
     setState(() {
       if (text.isNotEmpty) {
         _messages.insert(0, message);
-        auth.getMessageUser(user);
+
+        // auth.getMessageUser(user);
+        // if (text == 'cadastro') {
+        //   List<String> list = <String>[];
+        //   var i = 0;
+
+        //   while (i < 3) {
+        //     list.add(text);
+        //     print(list);
+        //     i++;
+        //   }
+        //   //auth.getMessageUser(user, '0', '2');
+        // }
       }
     });
-
+    // if (text == 'cadastro') {
+    //   var completed = Observable(text);
+    //   final dispose =
+    //       when((_) => completed.value == text, () => print('fucking error'));
+    // }
     response(text);
   }
 

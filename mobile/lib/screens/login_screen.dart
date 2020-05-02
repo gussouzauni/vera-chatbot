@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mobile/chatbot/chatbot.dart';
-import 'package:mobile/services/auth.dart';
+import 'package:Vera/chatbot/chatbot.dart';
+import 'package:Vera/services/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -16,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     _auth.getUser.then((user) {
       if (user != null) {
+        _auth.signOut();
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Chatbot()),
@@ -27,23 +27,28 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login App :)'),
-      ),
+      backgroundColor: const Color(0xff142032),
       body: Container(
-        height: MediaQuery.of(context).size.height / 2,
+        margin: EdgeInsets.only(top: 70),
+        height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.only(top: 52),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              width: MediaQuery.of(context).size.width / 1.4,
-              height: 100,
-              child: LoginButton(
-                text: 'Login com Google',
-                icon: FontAwesomeIcons.google,
-                color: Colors.blue,
-                loginMethod: _auth.googleSignIn,
+              width: 200,
+              height: 300,
+              child: Image.asset('assets/vera.png'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                margin: EdgeInsets.only(bottom: 30),
+                child: LoginButton(
+                  text: 'Login',
+                  color: const Color(0xffF71963),
+                  loginMethod: _auth.googleSignIn,
+                ),
               ),
             )
           ],
@@ -66,11 +71,11 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 5),
+      decoration: BoxDecoration(shape: BoxShape.circle),
       child: FlatButton.icon(
         shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0)),
-        padding: EdgeInsets.all(30),
+            borderRadius: new BorderRadius.circular(50.0)),
+        padding: EdgeInsets.all(10),
         icon: Icon(icon, color: Colors.white),
         color: color,
         onPressed: () async {

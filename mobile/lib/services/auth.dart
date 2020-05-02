@@ -49,13 +49,13 @@ class Auth {
     }, merge: true);
   }
 
-  Future<void> getMessageUser(FirebaseUser user) {
+  Future<void> getMessageUser(FirebaseUser user, [String cpf, String cnpj]) {
     DocumentReference userRef =
         _firestore.collection('user').document(user.uid);
 
     return userRef.setData({
-      'cpf': '000',
-      'cnpj': '000',
+      'cpf': cpf,
+      'cnpj': cnpj,
     }, merge: true);
   }
 
