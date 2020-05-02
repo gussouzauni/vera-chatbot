@@ -51,7 +51,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
                 controller: _textController,
                 onFieldSubmitted: _handleSubmitted,
                 decoration:
-                    InputDecoration.collapsed(hintText: "Enviar uma mensagem"),
+                    InputDecoration.collapsed(hintText: "Envie uma mensagem"),
               ),
             ),
             Container(
@@ -107,26 +107,11 @@ class HomeScreenDialogFlow extends State<Chatbot> {
     setState(() {
       if (text.isNotEmpty) {
         _messages.insert(0, message);
+        //auth.getMessageUser(user, '175.192.022.32', '30293-0');
 
-        // auth.getMessageUser(user);
-        // if (text == 'cadastro') {
-        //   List<String> list = <String>[];
-        //   var i = 0;
-
-        //   while (i < 3) {
-        //     list.add(text);
-        //     print(list);
-        //     i++;
-        //   }
-        //   //auth.getMessageUser(user, '0', '2');
-        // }
       }
     });
-    // if (text == 'cadastro') {
-    //   var completed = Observable(text);
-    //   final dispose =
-    //       when((_) => completed.value == text, () => print('fucking error'));
-    // }
+
     response(text);
   }
 

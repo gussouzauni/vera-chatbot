@@ -36,8 +36,8 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              width: 200,
-              height: 300,
+              width: 100,
+              height: 200,
               child: Image.asset('assets/vera.png'),
             ),
             Padding(
