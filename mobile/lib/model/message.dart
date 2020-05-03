@@ -26,16 +26,29 @@ class Message extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
+            /* Text(
               this.name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-            ),
+            ), */
             Container(
               //custom message here
               margin: const EdgeInsets.only(top: 5.0),
-              child: Text(
-                text,
-                style: TextStyle(fontSize: 15),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Color(0xFF142032),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
+                    bottomRight: Radius.circular(10.0),
+                  ),
+                ),
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  child: Text(
+                    text,
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                ),
               ),
             ),
           ],
@@ -50,12 +63,25 @@ class Message extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            Text(this.name, style: Theme.of(context).textTheme.subhead),
+            /* Text(this.name, style: Theme.of(context).textTheme.subhead), */
             Container(
               margin: const EdgeInsets.only(top: 5.0),
-              child: Text(
-                text,
-                style: TextStyle(fontSize: 15),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Color(0xFFF71963),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.0),
+                    topRight: Radius.circular(10.0),
+                    bottomLeft: Radius.circular(10.0),
+                  ),
+                ),
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  child: Text(
+                    text,
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
+                ),
               ),
             ),
           ],
@@ -73,6 +99,8 @@ class Message extends StatelessWidget {
               ))),
     ];
   }
+
+
 
   @override
   Widget build(BuildContext context) {
