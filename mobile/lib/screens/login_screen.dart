@@ -15,7 +15,6 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     _auth.getUser.then((user) {
       if (user != null) {
-        _auth.signOut();
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Chatbot()),
@@ -29,18 +28,18 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: const Color(0xff142032),
       body: Container(
-        margin: EdgeInsets.only(top: 70),
+        margin: EdgeInsets.only(top: 40),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Stack(
           children: <Widget>[
             Positioned(
-              width: 200,
-              left: 180,
+              width: 250,
+              left: 150,
               child: Image.asset('assets/dialog.png'),
             ),
             Positioned(
-              top: 230,
+              top: 270,
               left: 20,
               width: 200,
               child: Image.asset('assets/vera.png'),
@@ -52,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(bottom: 30),
+                    margin: EdgeInsets.only(bottom: 20),
                     child: LoginButton(
                       text: 'Login',
                       color: const Color(0xffF71963),

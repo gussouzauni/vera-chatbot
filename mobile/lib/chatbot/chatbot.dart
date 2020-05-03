@@ -34,7 +34,6 @@ class HomeScreenDialogFlow extends State<Chatbot> {
 
   Widget _buildTextComposer() {
     FirebaseUser user = Provider.of<FirebaseUser>(context);
-
     return IconTheme(
       data: IconThemeData(color: Theme.of(context).accentColor),
       child: Container(
@@ -113,6 +112,18 @@ class HomeScreenDialogFlow extends State<Chatbot> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: <Widget>[
+        Container(
+          height: 70,
+          width: double.maxFinite,
+          color: const Color(0xff142032),
+          child: Padding(
+            padding: EdgeInsets.only(top: 20),
+            child: Icon(
+              Icons.dashboard,
+              color: Colors.white,
+            ),
+          ),
+        ),
         Flexible(
             child: ListView.builder(
           padding: EdgeInsets.all(8.0),
