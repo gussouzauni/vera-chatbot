@@ -36,8 +36,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/chatbot.json
     - assets/vera-bot.png
     - assets/vera.png
     - assets/dialog.png
     - assets/vtex.svg
+    - assets/login-vera.png
