@@ -14,6 +14,7 @@ dependencies:
 
   font_awesome_flutter: 8.8.1
   flutter_svg: 0.17.4
+  flutter_launcher_icons: "^0.6.1"
 
   flutter_mobx: 1.1.0
   provider: 4.0.5+1
@@ -24,7 +25,6 @@ dependencies:
   google_sign_in: 4.4.4
   cloud_firestore: ^0.13.5
   rxdart: 0.21.0
-  flutter_signin_button: ^1.0.0
   flutter_dialogflow: ^0.1.1
 
 dev_dependencies:
@@ -37,7 +37,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/vera-bot.png
-    - assets/vera.png
-    - assets/dialog.png
     - assets/vtex.svg
     - assets/login-vera.png
+    - assets/chatbot.json
+    - assets/vera.png

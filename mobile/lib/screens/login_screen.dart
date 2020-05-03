@@ -28,37 +28,36 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: const Color(0xff142032),
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.only(top: 40),
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Stack(
-            children: <Widget>[
-              Image.asset(
-                'assets/login-vera.png',
-                fit: BoxFit.contain,
-              ),
-              Padding(
-                padding: EdgeInsets.all(15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(bottom: 20),
-                      child: LoginButton(
-                        text: 'Login',
-                        color: const Color(0xffF71963),
-                        loginMethod: _auth.googleSignIn,
-                      ),
+          child: Container(
+        margin: EdgeInsets.only(top: 20),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Stack(
+          children: <Widget>[
+            Image.asset(
+              'assets/login-vera.png',
+              fit: BoxFit.contain,
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: LoginButton(
+                      text: 'Login',
+                      color: const Color(0xffF71963),
+                      loginMethod: _auth.googleSignIn,
                     ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        )
-      ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      )),
     );
   }
 }

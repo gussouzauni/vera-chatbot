@@ -26,12 +26,7 @@ class Message extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            /* Text(
-              this.name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-            ), */
             Container(
-              //custom message here
               margin: const EdgeInsets.only(top: 5.0),
               child: DecoratedBox(
                 decoration: BoxDecoration(
@@ -43,7 +38,8 @@ class Message extends StatelessWidget {
                   ),
                 ),
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                   child: Text(
                     text,
                     style: TextStyle(fontSize: 15, color: Colors.white),
@@ -63,7 +59,6 @@ class Message extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            /* Text(this.name, style: Theme.of(context).textTheme.subhead), */
             Container(
               margin: const EdgeInsets.only(top: 5.0),
               child: DecoratedBox(
@@ -76,7 +71,8 @@ class Message extends StatelessWidget {
                   ),
                 ),
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                   child: Text(
                     text,
                     style: TextStyle(fontSize: 15, color: Colors.white),
@@ -99,8 +95,6 @@ class Message extends StatelessWidget {
               ))),
     ];
   }
-
-
 
   @override
   Widget build(BuildContext context) {
