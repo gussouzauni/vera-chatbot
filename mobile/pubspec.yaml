@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   font_awesome_flutter: 8.8.1
+  flutter_svg: 0.17.4
 
   flutter_mobx: 1.1.0
   provider: 4.0.5+1
@@ -39,3 +40,4 @@ flutter:
     - assets/vera-bot.png
     - assets/vera.png
     - assets/dialog.png
+    - assets/vtex.svg

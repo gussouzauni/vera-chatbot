@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:Vera/model/message.dart';
 import 'package:Vera/services/auth.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class Chatbot extends StatefulWidget {
@@ -18,9 +19,10 @@ class Chatbot extends StatefulWidget {
 }
 
 class HomeScreenDialogFlow extends State<Chatbot> {
+  Auth auth = new Auth();
   final List<Message> _messages = <Message>[];
   final TextEditingController _textController = TextEditingController();
-  Auth auth = new Auth();
+  final String svg = 'assets/vtex.svg';
 
   @override
   void initState() {
@@ -118,9 +120,9 @@ class HomeScreenDialogFlow extends State<Chatbot> {
           color: const Color(0xff142032),
           child: Padding(
             padding: EdgeInsets.only(top: 20),
-            child: Icon(
-              Icons.dashboard,
-              color: Colors.white,
+            child: SvgPicture.asset(
+              svg,
+              color: const Color(0xffF71963),
             ),
           ),
         ),
