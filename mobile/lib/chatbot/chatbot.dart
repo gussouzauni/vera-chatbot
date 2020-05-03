@@ -43,11 +43,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
           children: <Widget>[
             Flexible(
               child: TextFormField(
-                onChanged: (v) {
-                  if (v == 'cadastro' || v == 'cadastrar') {
-                    // print(v);
-                  }
-                },
+                onChanged: (v) {},
                 controller: _textController,
                 onFieldSubmitted: _handleSubmitted,
                 decoration:
@@ -107,8 +103,6 @@ class HomeScreenDialogFlow extends State<Chatbot> {
     setState(() {
       if (text.isNotEmpty) {
         _messages.insert(0, message);
-        //auth.getMessageUser(user, '175.192.022.32', '30293-0');
-
       }
     });
 

@@ -32,23 +32,34 @@ class _LoginScreenState extends State<LoginScreen> {
         margin: EdgeInsets.only(top: 70),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Stack(
           children: <Widget>[
-            Container(
-              width: 100,
-              height: 200,
+            Positioned(
+              width: 200,
+              left: 180,
+              child: Image.asset('assets/dialog.png'),
+            ),
+            Positioned(
+              top: 230,
+              left: 20,
+              width: 200,
               child: Image.asset('assets/vera.png'),
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                margin: EdgeInsets.only(bottom: 30),
-                child: LoginButton(
-                  text: 'Login',
-                  color: const Color(0xffF71963),
-                  loginMethod: _auth.googleSignIn,
-                ),
+              padding: EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 30),
+                    child: LoginButton(
+                      text: 'Login',
+                      color: const Color(0xffF71963),
+                      loginMethod: _auth.googleSignIn,
+                    ),
+                  ),
+                ],
               ),
             )
           ],
