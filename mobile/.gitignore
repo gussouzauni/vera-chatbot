@@ -28,6 +28,7 @@
 .packages
 .pub-cache/
 .pub/
+/android/key.properties
 /build/
 /assets/chatbot.json
 

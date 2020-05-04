@@ -106,7 +106,7 @@ class HomeScreenDialogFlow extends State<Chatbot> {
         _messages.insert(0, message);
       }
     });
-
+    FocusScope.of(context).unfocus();
     response(text);
   }
 
