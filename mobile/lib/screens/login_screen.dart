@@ -46,10 +46,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.only(bottom: 20),
-                    child: LoginButton(
-                      text: 'Login',
-                      color: const Color(0xffF71963),
-                      loginMethod: _auth.googleSignIn,
+                    child: Center(
+                      child: LoginButton(
+                        text: 'Login',
+                        color: const Color(0xffF71963),
+                        loginMethod: _auth.googleSignIn,
+                      ),
                     ),
                   ),
                 ],
