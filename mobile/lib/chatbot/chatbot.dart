@@ -121,8 +121,9 @@ class HomeScreenDialogFlow extends State<Chatbot> {
           child: Padding(
             padding: EdgeInsets.only(top: 20),
             child: SvgPicture.asset(
-              svg,
+              svg, fit: BoxFit.contain,
               color: const Color(0xffF71963),
+              // color: const Color(0xffF71963),
             ),
           ),
         ),
