@@ -1,9 +1,14 @@
-<p align="justify"># Vera</p>
-- Chatbot criado durante o megahack 2020 - 2º Edição, para o desafio da VTex e-commerce.
+<h1 align="center">Vera</h1>
+<p align="center">
+  <img width="150" height="150" src="https://github.com/gussouzauni/vera-bot-flutter/blob/master/mobile/assets/vera.png">
+</p>
 
 
+# Screens
 
-# ScreenOne
-
-![](https://github.com/gussouzauni/vera-bot-flutter/blob/master/mobile/assets/screenOne.png)
-![](https://github.com/gussouzauni/vera-bot-flutter/blob/master/mobile/assets/screenTwo.png)
+<p align="center">
+  <img width="420" height="869" src="https://github.com/gussouzauni/vera-bot-flutter/blob/master/mobile/assets/screenOne.png">
+</p>
+<p align="center">
+  <img width="420" height="869" src="https://github.com/gussouzauni/vera-bot-flutter/blob/master/mobile/assets/screenTwo.png">
+</p>
