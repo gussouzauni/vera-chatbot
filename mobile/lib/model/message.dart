@@ -17,10 +17,15 @@ class Message extends StatelessWidget {
     return <Widget>[
       Container(
           margin: const EdgeInsets.only(right: 16.0),
-          child: CircleAvatar(
-            child: Image.asset(
-              'assets/vera-bot.png',
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              CircleAvatar(
+                child: Image.asset(
+                  'assets/vera-bot.png',
+                ),
+              ),
+            ],
           )),
       Expanded(
         child: Column(
