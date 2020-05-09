@@ -1,5 +1,5 @@
-# Vera
-Bot criado durante o megahack 2020 - 2º Edição, para o desafio da VTex e-commerce.
+<center># Vera</center>
+- Chatbot criado durante o megahack 2020 - 2º Edição, para o desafio da VTex e-commerce.
 
 
 
